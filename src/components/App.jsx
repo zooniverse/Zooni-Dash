@@ -5,24 +5,21 @@ import { ZooniverseLogo } from 'zooniverse-react-components';
 
 import AuthContainer from '../containers/AuthContainer';
 import AboutLayout from './about';
+import Header from './Header';
 import Home from './Home';
+import Weather from './Weather';
 
 export default function App() {
   return (
     <div>
       <header className="site-header">
-        <Link to="/" className="link"><h1 className="title">Zooniverse Starter Project</h1></Link>
-        <Link to="/about" className="link">About</Link>
-        <AuthContainer />
-        <ZooniverseLogo />
+        <Header />
       </header>
       <section className="content-section">
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={AboutLayout} />
-        </Switch>
+        <div className="content-section__container">
+          <Weather />
+        </div>
       </section>
     </div>
   );
 }
-
